@@ -40,6 +40,7 @@ Picard
 GATK or FreeBayes
 
 # Repository Structure
+
 ├── Environment
 │   ├── Environment.yml
 │   └── ReadME.pdf
@@ -53,6 +54,44 @@ GATK or FreeBayes
     ├── ERR13985875_1_paired_fastqc (Trimmed).pdf
     ├── ERR13985875_2_fastqc.pdf
     └── ERR13985875_2_paired_fastqc (Trimmed).pdf
+
+#  RNA-Seq Analysis Pipeline
+
+A comprehensive, modular pipeline for RNA sequencing (RNA-Seq) analysis. This pipeline streamlines the process from raw sequencing reads to differential gene expression analysis, making it easier to integrate into your bioinformatics workflows.
+
+# Overview
+The RNA-Seq Analysis Pipeline automates the key steps in gene expression analysis, including:
+
+- Data Acquisition: Downloading RNA-Seq data from the Sequence Read Archive (SRA), along with reference genome and annotation (GTF) files.
+- Pre-processing: Converting SRA files to FASTQ format, assessing read quality using FastQC and MultiQC, and trimming adapters/low-quality bases with Trimmomatic.
+- Read Alignment: Mapping reads to a reference genome using HISAT2.
+- Post-alignment Processing: Sorting and indexing BAM files using Samtools.
+- Quantification: Counting reads per gene using featureCounts.
+- Differential Expression Analysis: Identifying differentially expressed genes using DESeq2 in R, along with visualizations such as volcano plots, MA plots, PCA plots, and heatmaps.
+This pipeline is designed with modularity and reproducibility in mind, allowing you to easily customize and extend its functionality.
+
+# Features
+- Modular Design: Easily swap out tools or add new ones based on your requirements.
+- Automation: End-to-end processing from raw RNA-Seq reads to gene expression results.
+- Scalability: Suitable for both small experiments and large-scale transcriptomic studies.
+- Reproducibility: Configuration files and version control ensure that analyses can be replicated.
+
+# Requirements
+Operating System: Linux-based systems (tested on Ubuntu)
+Programming Language: Bash, R (for differential expression analysis)
+Tools:
+Git
+SRA Toolkit
+FastQC
+MultiQC
+Trimmomatic
+HISAT2
+Samtools
+featureCounts
+R with DESeq2
+# https://github.com/Karudhoru/RNASeq-Analysis-Pipeline?tab=readme-ov-file#repository-structure
+
+
     
 
 
