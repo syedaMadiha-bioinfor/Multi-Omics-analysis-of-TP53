@@ -40,6 +40,7 @@ Picard
 GATK or FreeBayes
 
 # Repository Structure
+[str.txt](https://github.com/user-attachments/files/19279929/str.txt)
 
 ├── Environment
 │   ├── Environment.yml
