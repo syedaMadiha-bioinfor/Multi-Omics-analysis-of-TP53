@@ -91,7 +91,8 @@ HISAT2
 Samtools
 featureCounts
 R with DESeq2
-
+### repository structure
+```											             
 RNASeq-Analysis-Pipeline/
 ├── data/
 │   ├── raw_data/
@@ -111,7 +112,8 @@ RNASeq-Analysis-Pipeline/
 │   └── references.md
 ├── README.md
 └── LICENSE
-    
+```											             
+
 
 
 
