@@ -14,7 +14,7 @@ o RNA-Seq data for cancer types (e.g., Lung, Breast, Colon, etc.)
 # NGS Variant Calling Pipeline
 A comprehensive, modular pipeline for calling variants from next-generation sequencing (NGS) data. This pipeline streamlines the analysis from raw sequencing reads to annotated variant calls, making it easier to integrate into your bioinformatics workflows
 
-# Overview
+## Overview
 The NGS Variant Calling Pipeline automates the key steps in variant analysis, including:
 
 Quality Control: Assessing raw read quality (e.g., using FastQC).
@@ -23,13 +23,13 @@ Post-processing: Sorting, indexing, and marking duplicates (e.g., with Samtools 
 Variant Calling: Identifying single nucleotide variants and indels (e.g., using GATK or FreeBayes).
 Annotation: Adding biological context to identified variants (e.g., using GATK).
 This pipeline is designed with modularity and reproducibility in mind, allowing you to easily customize and extend its functionality.
-# Features
+### Features
 Modular Design: Swap out or add tools based on your needs.
 Automation: End-to-end processing from raw data to variant reports.
 Scalability: Suitable for both small datasets and large-scale studies.
 Reproducibility: Configuration files and version control ensure that analyses can be replicated.
 
-# Requirements
+### Requirements
 Operating System: Linux-based systems (tested on Ubuntu)
 Programming Language: Python 3.6 or higher
 Tools:
@@ -39,9 +39,9 @@ Samtools
 Picard
 GATK or FreeBayes
 
-# Repository Structure
-                (https://github.com/user-attachments/files/19279929/str.txt)
+### Repository Structure
 
+```											             
 ├── Environment
 │   ├── Environment.yml
 │   └── ReadME.pdf
@@ -55,12 +55,13 @@ GATK or FreeBayes
     ├── ERR13985875_1_paired_fastqc (Trimmed).pdf
     ├── ERR13985875_2_fastqc.pdf
     └── ERR13985875_2_paired_fastqc (Trimmed).pdf
+```
 
 #  RNA-Seq Analysis Pipeline
 
 A comprehensive, modular pipeline for RNA sequencing (RNA-Seq) analysis. This pipeline streamlines the process from raw sequencing reads to differential gene expression analysis, making it easier to integrate into your bioinformatics workflows.
-
-# Overview
+	
+## Overview
 The RNA-Seq Analysis Pipeline automates the key steps in gene expression analysis, including:
 
 - Data Acquisition: Downloading RNA-Seq data from the Sequence Read Archive (SRA), along with reference genome and annotation (GTF) files.
@@ -71,13 +72,13 @@ The RNA-Seq Analysis Pipeline automates the key steps in gene expression analysi
 - Differential Expression Analysis: Identifying differentially expressed genes using DESeq2 in R, along with visualizations such as volcano plots, MA plots, PCA plots, and heatmaps.
 This pipeline is designed with modularity and reproducibility in mind, allowing you to easily customize and extend its functionality.
 
-# Features
+### Features
 - Modular Design: Easily swap out tools or add new ones based on your requirements.
 - Automation: End-to-end processing from raw RNA-Seq reads to gene expression results.
 - Scalability: Suitable for both small experiments and large-scale transcriptomic studies.
 - Reproducibility: Configuration files and version control ensure that analyses can be replicated.
 
-# Requirements
+### Requirements
 Operating System: Linux-based systems (tested on Ubuntu)
 Programming Language: Bash, R (for differential expression analysis)
 Tools:
@@ -90,7 +91,6 @@ HISAT2
 Samtools
 featureCounts
 R with DESeq2
-# https://github.com/Karudhoru/RNASeq-Analysis-Pipeline?tab=readme-ov-file#repository-structure
 
 RNASeq-Analysis-Pipeline/
 ├── data/
