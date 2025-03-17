@@ -33,11 +33,11 @@ Reproducibility: Configuration files and version control ensure that analyses ca
 Operating System: Linux-based systems (tested on Ubuntu)
 Programming Language: Python 3.6 or higher
 Tools:
-Git
-FastQC
-Samtools
-Picard
-GATK or FreeBayes
+[Git](https://git-scm.com/)
+[FastQC]
+[Samtools]
+[Picard]
+[GATK] or [FreeBayes]
 
 ### Repository Structure
 
