@@ -1,115 +1,29 @@
-# Multi-Omics-Analysis-of-TP53
-Objective : Analyze TP53 mutations using NGS data, integrate RNA-Seq gene expression  data, and apply AI/ML models for insights
+# TCGA-BRCA Dataset Analysis: Gene Expression and Survival in Breast Cancer
+This project explores the relationship between gene expression profiles and survival outcomes in breast cancer using data from The Cancer Genome Atlas (TCGA) Breast Invasive Carcinoma (BRCA) dataset (cbioportal). The analysis integrates genomic data with clinical information to identify genes that significantly impact patient survival and to understand how these genes manifest in distinct patient clusters.
 
-# Genomics and data retrieval
-Tools: NCBI, Ensembl, UCSC Genome Browser, Galaxy 
-1. Retrieve Genomic Data:  
-o Download TP53 gene sequence from NCBI Gene Database. 
-o Extract mutations from dbSNP or COSMIC Mutation Database. 
-2. Obtain Cancer Datasets:  
-o Download TP53 mutation datasets from TCGA (via UCSC Xena 
-or GDC Data Portal). 
-o RNA-Seq data for cancer types (e.g., Lung, Breast, Colon, etc.)
+### Objectives
+1. Data Acquisition:
+Downloaded gene expression and clinical data from cBioPortal to ensure comprehensive coverage of patient genomic profiles and clinical outcomes.
+2. Data Preparation:
+   - Preprocessing: Filtered gene expression data to remove noise and irrelevant features, ensuring high-quality data for subsequent analysis.
+   - Survival Data Extraction: Extracted survival data, including time-to-event and event status, from clinical records to enable survival analysis.
+3. Feature Selection:
+  - Top Gene Identification: Employed statistical methods such as Cox proportional hazards models and the log-rank test to identify the top 100 genes significantly associated with patient survival. These genes serve as the basis for further analysis.
+4. Clustering analysis:
+  - K-means Clustering: Applied k-means clustering on the selected genes to categorize patients into clusters based on their gene expression profiles.
+  - Cluster Validation: Determined the optimal number of clusters using techniques like the elbow method, ensuring robust cluster assignments.
+5. Survival analysis:
+* Within-cluster Analysis: Conducted Cox proportional hazards modeling within each cluster to assess how gene expression influences survival outcomes.
+* Kaplan-Meier Curves: Plotted Kaplan-Meier survival curves for high and low expression groups of a representative gene in each cluster.
+* Statistical Validation: Performed log-rank tests to statistically compare survival distributions between these groups, evaluating the significance of gene expression levels on patient outcomes.
 
-# NGS Variant Calling Pipeline
-A comprehensive, modular pipeline for calling variants from next-generation sequencing (NGS) data. This pipeline streamlines the analysis from raw sequencing reads to annotated variant calls, making it easier to integrate into your bioinformatics workflows
+### Findings and Insights
+Identified specific genes that significantly affect survival patterns across different patient clusters.
+Characterized distinct survival profiles associated with high and low expression levels of key genes within each cluster.
+Provided insights into potential biomarkers and therapeutic targets based on gene expression patterns and survival associations.
 
-# Overview
-The NGS Variant Calling Pipeline automates the key steps in variant analysis, including:
-
-Quality Control: Assessing raw read quality (e.g., using FastQC).
-Read Alignment: Mapping reads to a reference genome (e.g., using BWA or Bowtie).
-Post-processing: Sorting, indexing, and marking duplicates (e.g., with Samtools and Picard).
-Variant Calling: Identifying single nucleotide variants and indels (e.g., using GATK or FreeBayes).
-Annotation: Adding biological context to identified variants (e.g., using GATK).
-This pipeline is designed with modularity and reproducibility in mind, allowing you to easily customize and extend its functionality.
-# Features
-Modular Design: Swap out or add tools based on your needs.
-Automation: End-to-end processing from raw data to variant reports.
-Scalability: Suitable for both small datasets and large-scale studies.
-Reproducibility: Configuration files and version control ensure that analyses can be replicated.
-
-# Requirements
-Operating System: Linux-based systems (tested on Ubuntu)
-Programming Language: Python 3.6 or higher
-Tools:
-Git
-FastQC
-Samtools
-Picard
-GATK or FreeBayes
-
-# Repository Structure
-
-├── Environment
-│   ├── Environment.yml
-│   └── ReadME.pdf
-├── Pipeline
-│   └── Variant_Calling.sh
-├── README.md
-├── docs
-│   └── ToolsandSteps.pdf
-└── results
-    ├── ERR13985875_1_fastqc.pdf
-    ├── ERR13985875_1_paired_fastqc (Trimmed).pdf
-    ├── ERR13985875_2_fastqc.pdf
-    └── ERR13985875_2_paired_fastqc (Trimmed).pdf
-
-#  RNA-Seq Analysis Pipeline
-
-A comprehensive, modular pipeline for RNA sequencing (RNA-Seq) analysis. This pipeline streamlines the process from raw sequencing reads to differential gene expression analysis, making it easier to integrate into your bioinformatics workflows.
-
-# Overview
-The RNA-Seq Analysis Pipeline automates the key steps in gene expression analysis, including:
-
-- Data Acquisition: Downloading RNA-Seq data from the Sequence Read Archive (SRA), along with reference genome and annotation (GTF) files.
-- Pre-processing: Converting SRA files to FASTQ format, assessing read quality using FastQC and MultiQC, and trimming adapters/low-quality bases with Trimmomatic.
-- Read Alignment: Mapping reads to a reference genome using HISAT2.
-- Post-alignment Processing: Sorting and indexing BAM files using Samtools.
-- Quantification: Counting reads per gene using featureCounts.
-- Differential Expression Analysis: Identifying differentially expressed genes using DESeq2 in R, along with visualizations such as volcano plots, MA plots, PCA plots, and heatmaps.
-This pipeline is designed with modularity and reproducibility in mind, allowing you to easily customize and extend its functionality.
-
-# Features
-- Modular Design: Easily swap out tools or add new ones based on your requirements.
-- Automation: End-to-end processing from raw RNA-Seq reads to gene expression results.
-- Scalability: Suitable for both small experiments and large-scale transcriptomic studies.
-- Reproducibility: Configuration files and version control ensure that analyses can be replicated.
-
-# Requirements
-Operating System: Linux-based systems (tested on Ubuntu)
-Programming Language: Bash, R (for differential expression analysis)
-Tools:
-Git
-SRA Toolkit
-FastQC
-MultiQC
-Trimmomatic
-HISAT2
-Samtools
-featureCounts
-R with DESeq2
-# https://github.com/Karudhoru/RNASeq-Analysis-Pipeline?tab=readme-ov-file#repository-structure
-
-RNASeq-Analysis-Pipeline/
-├── data/
-│   ├── raw_data/
-│   └── processed_data/
-├── scripts/
-│   ├── quality_control/
-│   ├── alignment/
-│   ├── quantification/
-│   └── differential_expression/
-├── results/
-│   ├── quality_control_reports/
-│   ├── alignment_stats/
-│   ├── quantification_results/
-│   └── differential_expression_results/
-├── docs/
-│   ├── workflow.md
-│   └── references.md
-├── README.md
-└── LICENSE
-    
-
-
+### Conclusion
+The survival analysis reveals that the expression of the selected gene (NUP43) affects survival patterns differently across clusters:
+Significant impact in Cluster 1.
+No significant impact in Clusters 2 and 3.
+These findings can guide further research into understanding the role of NUP43 in breast cancer subtypes and could potentially inform targeted therapeutic strategies based on cluster-specific gene expression profiles.
