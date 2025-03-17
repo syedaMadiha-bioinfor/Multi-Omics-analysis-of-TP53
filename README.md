@@ -33,11 +33,11 @@ Reproducibility: Configuration files and version control ensure that analyses ca
 Operating System: Linux-based systems (tested on Ubuntu)
 Programming Language: Python 3.6 or higher
 Tools:
-[Git](https://git-scm.com/)
-[FastQC]
-[Samtools]
-[Picard]
-[GATK] or [FreeBayes]
+- [Git](https://git-scm.com/)
+- [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+- [Samtools](https://www.htslib.org/)
+- [Picard](https://broadinstitute.github.io/picard/)
+- [GATK](https://gatk.broadinstitute.org/hc/en-us) or [FreeBayes](https://github.com/freebayes/freebayes)
 
 ### Repository Structure
 
@@ -82,15 +82,15 @@ This pipeline is designed with modularity and reproducibility in mind, allowing 
 Operating System: Linux-based systems (tested on Ubuntu)
 Programming Language: Bash, R (for differential expression analysis)
 Tools:
-Git
-SRA Toolkit
-FastQC
-MultiQC
-Trimmomatic
-HISAT2
-Samtools
-featureCounts
-R with DESeq2
+- [Git](https://git-scm.com/)
+- [SRA Toolkit](https://github.com/ncbi/sra-tools/wiki/01.-Downloading-SRA-Toolkit)
+- [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+- [MultiQC](https://seqera.io/multiqc/)
+- [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
+- [HISAT2](https://daehwankimlab.github.io/hisat2/)
+- [Samtools](https://www.htslib.org/)
+- [featureCounts](https://bioinf.wehi.edu.au/featureCounts/)
+- [R](https://www.r-project.org/) with [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
 ### repository structure
 ```											             
 RNASeq-Analysis-Pipeline/
