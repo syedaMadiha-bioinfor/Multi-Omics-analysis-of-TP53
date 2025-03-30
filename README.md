@@ -39,22 +39,7 @@ Tools:
 - [Picard](https://broadinstitute.github.io/picard/)
 - [GATK](https://gatk.broadinstitute.org/hc/en-us) or [FreeBayes](https://github.com/freebayes/freebayes)
 
-### Repository Structure
-```             
-├── Environment
-│   ├── Environment.yml
-│   └── ReadME.pdf
-├── Pipeline
-│   └── Variant_Calling.sh
-├── README.md
-├── docs
-│   └── ToolsandSteps.pdf
-└── results
-    ├── ERR13985875_1_fastqc.pdf
-    ├── ERR13985875_1_paired_fastqc (Trimmed).pdf
-    ├── ERR13985875_2_fastqc.pdf
-    └── ERR13985875_2_paired_fastqc (Trimmed).pdf
-```
+
 
 ## step 3:  RNA-Seq Analysis Pipeline
 A comprehensive, modular pipeline for RNA sequencing (RNA-Seq) analysis. This pipeline streamlines the process from raw sequencing reads to differential gene expression analysis, making it easier to integrate into your bioinformatics workflows.
