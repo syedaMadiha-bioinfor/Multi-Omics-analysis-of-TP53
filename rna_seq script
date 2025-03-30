@@ -1,0 +1,29 @@
+!/bin/bash
+
+SECONDS=0
+
+#change working directory 
+cd /home/madi/Desktop/RNASeq_pipeline
+# STEP 1: Run fastqc
+fastqc data/DRR491296.fastq -o data/
+run trimmomatic to trim reads with poor quality
+java -jar ~/home/madi/Trimmomatic/Trimmomatic-0.39 SE -threads 4 data/DRR491296.fastq data/trimmed.fastq TRAILING:10 -phred33
+java -jar ~/Trimmomatic/Trimmomatic-0.39/trimmomatic-0.39.jar SE -phred33 /home/madi/Desktop/RNASeq_pipeline/data/DRR491296.fastq trimmed.fastq TRAILING:10 LEADING:10 TRAILING:5 MINLEN:50 SLIDINGWINDOW:4:20
+echo "Trimmomatic finished running!"
+
+fastqc data/trimmed.fastq -o data/
+# step 2: run HISAT2
+get the genome incdices
+wget 
+
+# run alignment 
+hisat2 -q --rna-strandness R -X HISAT2/grch38_genome/grch38 -U data/trimmed.fastq | samtools sort -o HISAT2/trimmed.bam
+# step 3: Run featurCounts - Quantification
+ 
+get gft
+wget https://ftp.ensembl.org/pub/release-113/gtf/homo_sapiens/Homo_sapiens.GRCh38.113.gtf.gz
+featureCounts -S 2 -a ../hg38/Homo_sapiens.GRCh38.113.gtf.gz -o quants/featurecounts.txt HISAT2/trimmed.bam
+
+Duration= $SECONDS
+echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
+
