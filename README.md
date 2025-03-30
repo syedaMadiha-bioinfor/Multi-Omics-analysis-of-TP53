@@ -90,28 +90,7 @@ This pipeline is designed with modularity and reproducibility in mind, allowing 
 - [featureCounts](https://bioinf.wehi.edu.au/featureCounts/)
 - [R](https://www.r-project.org/) with [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
 
-### repository structure
-```								             
-RNASeq-Analysis-Pipeline/
-├── data/
-│   ├── raw_data/
-│   └── processed_data/
-├── scripts/
-│   ├── quality_control/
-│   ├── alignment/
-│   ├── quantification/
-│   └── differential_expression/
-├── results/
-│   ├── quality_control_reports/
-│   ├── alignment_stats/
-│   ├── quantification_results/
-│   └── differential_expression_results/
-├── docs/
-│   ├── workflow.md
-│   └── references.md
-├── README.md
-└── LICENSE
-```								             
+						             
 ## step 4: AI & Machine Learning for Mutation Classification
 1. Prepare Data:  
 o Combine mutation features + gene expression profiles. 
